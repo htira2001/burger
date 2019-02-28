@@ -1,0 +1,119 @@
+body {
+
+    font-family: 'Pacifico', cursive;
+
+}
+
+h1 {
+
+    text-align: center;
+
+    font-size: 38px; 
+
+    font-family: 'Pacifico', cursive;
+
+}
+
+h1:before {
+
+    content: attr(data-text);
+
+    position: absolute;
+
+    overflow: hidden;
+
+    max-width: 90%;
+
+    white-space: nowrap;
+
+    color: #ffffff;
+
+    color: lightcoral;
+
+    animation: loading 5s infinite;
+
+}
+
+@keyframes loading {
+
+    0% {
+
+        max-width: 0;
+
+    }
+
+}
+
+h4 {
+
+    font-family:'Oswald', sans-serif; 
+
+}
+
+.order {
+
+    font-family: "Slabo 27px", serif;
+
+    font-size: 20px; 
+
+}
+
+#button {
+
+    font-family: "Oswald", sans-serif;
+
+}
+
+p {
+
+    font-size: 18px;
+
+    color: "black";
+
+    font-family:'Pacifico';
+
+}
+
+/* MAIN CONTAINER */
+
+.row{
+
+    margin: auto; 
+
+    width: 900px; 
+
+}
+
+/*BURGER DIVS*/
+
+#bothBoxes {
+
+	margin: auto;
+
+}
+
+#readyToEat {
+
+	width: 450px;
+
+	position: relative;
+
+	margin-bottom: 20px;
+
+    display: inline-block;
+
+}
+
+#alreadyAte {
+
+    float: right; 
+
+    width: 450px;
+
+	position: relative;
+
+	margin-bottom: 20px;
+
+    display: inline-block;
+
+}
