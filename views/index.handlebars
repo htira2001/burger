@@ -1,0 +1,123 @@
+<div class="row">
+
+    <center>
+
+        <img src="/assets/img/burgerhome.jpg" alt="Burger">
+
+    </center>
+
+    <h1 data-text="Eat-da-Veggie-Burger!">Eat-da-Veggie-Burger!</h1>
+
+</div>
+
+<div class="row" id="bothBoxes">
+
+    {{!-- Left Side (Ready to Eat) --}}
+
+    <div class="col-md-6" id="readyToEat">
+
+        <h4>Ready to Eat!</h4>
+
+        {{!-- Dynamically Insert Ready Burgers Here --}} 
+
+    
+        {{#each burgers}}
+
+            {{#unless this.devoured}}
+
+        <br>
+
+        <div class="burger">
+
+            <div class="order">
+
+                 {{burger_name}}   
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <form class="readyToEat" action="/{{this.id}}?_method=PUT" method="POST">
+
+                <input type="hidden" name="devoured" value="true">
+
+                <button class="btn waves-effect waves-light" id="button" type="submit" name="action">Devour it!</button>
+
+            </form>
+
+        </div>
+
+            {{/unless}}   
+
+        {{/each}}
+
+    </div>
+
+    {{!-- Right Side (Already Eaten) --}}
+
+    <div class="col-md-6" id="alreadyAte">
+
+        <h4>Already Eaten!</h4>
+
+        {{!-- Dynamically Insert Ready Burgers Here --}} {{#each burgers}} {{#if this.devoured}}
+
+        <br>
+
+        <div class="order">
+
+            {{this.burger_name}}
+
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+
+                <input type="hidden" name="devoured" value="false">
+
+                <button class="btn waves-effect waves-light" id="button" type="submit" name="action">Order it Again!</button>
+
+            </form>
+
+        </div>
+
+        {{/if}} {{/each}}
+
+    </div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <form class="create-update-form" action="/create" method="POST">
+
+            <div class="form-group">
+
+                <center>
+
+                    <p>Still Hungry?</p>
+
+                </center>
+
+                <center>
+
+                    <p>Type in the name of your favorite veggie burger and place your order!</p>
+
+                </center>
+
+                <input type="text" id="userBurger" name="name" placeholder="Your dream veggie burger" required/>
+
+            </div>
+
+            <center>
+
+                <button class="btn waves-effect waves-light" id="button" type="submit" name="action">Place Order</button>
+
+            </center>
+
+        </form>
+
+    </div>
+</div>
