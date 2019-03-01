@@ -6,59 +6,59 @@ let mysql = require("mysql");
 
 // Connecting Node to MySQL //
 
-let connection = mysql.createConnection({
+// let connection = mysql.createConnection({
 
-    host: "localhost",
+//     host: "localhost",
 
-    port: 3306,
+//     port: 3306,
 
-    user: "root",
+//     user: "root",
 
-    password: "Password1!",
+//     password: "Password1!",
 
-    database: "burgers_db"
+//     database: "burgers_db"
 
-});
+// });
 
-connection.connect(function(err) {
+// connection.connect(function(err) {
 
-    if (err) {
+//     if (err) {
 
-        console.error("There seems to be an error in connecting: " + err.stack);
+//         console.error("There seems to be an error in connecting: " + err.stack);
 
-        return; 
+//         return; 
 
-    }
+//     }
 
-    console.log("You are connected to the burgers database at id " + connection.threadId + "!");
+//     console.log("You are connected to the burgers database at id " + connection.threadId + "!");
 
-});
+// });
 
-// For Heroku Deployment vs. Local MySQL Database //
+//For Heroku Deployment vs. Local MySQL Database //
 
-// if(process.env.JAWSDB_URL){
+if(process.env.JAWSDB_URL){
 
-//     connection = mysql.createConnection(process.env.JAWSDB_URL);
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-//     console.log("My Heroku connection is started!");
+    console.log("My Heroku connection is started!");
 
-// }
+}
 
-// else{
+else{
 
-//     connection = mysql.createConnection({
+    connection = mysql.createConnection({
 
-//         host     : 'localhost',
+        host     : 'localhost',
 
-//         user     : 'root',
+        user     : 'root',
 
-//         password : "", // Add your password
+        password : "", // Add your password
 
-//         database : 'burgers_db', // Add your database
+        database : 'burgers_db', // Add your database
 
-//     });
+    });
 
-// }
-// Exporting the config connection for ORM use // 
+}
+// Exporting the config connection for ORM use  
 
  module.exports = connection;
