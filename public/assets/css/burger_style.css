@@ -28,7 +28,7 @@ h1:before {
 
     color: #ffffff;
 
-    color: lightcoral;
+    color: rgb(63, 218, 49);
 
     animation: loading 5s infinite;
 
@@ -70,7 +70,7 @@ p {
 
     color: "black";
 
-    font-family:'Pacifico';
+    font-family:'Apple Chancery, cursive';
 
 }
 
